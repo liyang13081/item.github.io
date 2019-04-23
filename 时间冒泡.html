@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		 .div1{
+		 	  width: 200px;
+		 	  height: 200px;
+		 	  background:url(图片/bangkok.jpg);
+		 	  background-size: cover;
+		 	  text-align: center;
+		 	  line-height: 200px;
+		 	  color: red;
+		 	  margin-left: 20px;
+		 	  font-size: 35px;
+		 	  float: left;
+		 	  position: relative;
+		 	  overflow: hidden;
+		 }
+		 .div2{
+		 	  width: 200px;
+		 	  height: 200px;
+		 	  background:rgba(249,250,250,0.8);
+		 	  margin-left: 20px;
+		 	  float: left;
+		 	  right: 0px;
+		 	  top:150px;
+              position: absolute;
+              font-size: 35px;
+		 }
+		 
+
+	</style>
+</head>
+<body>
+	<div id="div">
+<button id="btn">点击</button>
+</div>
+<input type="text" id="id">
+
+  <div class="div1">1
+  	<div class="div2">
+  		<span>第一张图片</span>
+  	</div>
+  </div>
+  <div class="div1">2
+  	<div class="div2">
+  		<span>第二张图片</span>
+  	</div>
+  </div>
+  <div class="div1">3
+  	<div class="div2">
+  		<span>第三张图片</span>
+  	</div>
+  </div>
+</body>
+<script type="text/javascript">
+	var btn=document.getElementById('btn');
+	   btn.addEventListener('click',hanshu);
+	   function hanshu(e){alert('1111');}
+	   //阻止事件冒泡
+	   // e.stopPropagation();
+	  
+    var div=document.getElementById('div');
+	   div.addEventListener('click',hanshu1);
+	   function hanshu1(){alert('2222');
+       
+	}
+	   // 移除
+	   // btn.removeEventListener('click',hanshu);
+	 
+	 
+	var div1=document.getElementsByClassName('div1');
+	for(var i=0;i<div1.length;i++){
+    div1[i].onmouseover=function(){
+         this.getElementsByClassName("div2")[0].style.top='0px';
+     }
+     div1[i].onmouseout=function(){
+        this.getElementsByClassName("div2")[0].style.top='160px';
+   }
+	}
+
+
+
+var a=['1','2','3','4','5'];
+a[3]=13;
+alert(a);
+
+var b=[1,2,3,4,5,6,7,8];
+b.unshift(3,3);
+  
+  var v=['1','2','3','4','5'];
+alert(v.concat('9')
+);
+
+</script>
+</html>
